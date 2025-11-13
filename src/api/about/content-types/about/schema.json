@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "abouts",
+  "info": {
+    "singularName": "about",
+    "pluralName": "abouts",
+    "displayName": "About"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "about": {
+      "type": "dynamiczone",
+      "components": [
+        "about.about",
+        "about.legacy",
+        "about.founder",
+        "about.team"
+      ]
+    }
+  }
+}

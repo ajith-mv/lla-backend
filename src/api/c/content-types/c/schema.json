@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cs",
+  "info": {
+    "singularName": "c",
+    "pluralName": "cs",
+    "displayName": "CourseMaster"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

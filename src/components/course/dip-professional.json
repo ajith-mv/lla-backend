@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_course_dip_professionals",
+  "info": {
+    "displayName": "course"
+  },
+  "options": {},
+  "attributes": {
+    "banner": {
+      "type": "component",
+      "component": "course.banner",
+      "repeatable": false
+    },
+    "benefit": {
+      "type": "component",
+      "component": "course.benefit",
+      "repeatable": false
+    },
+    "course_over_view": {
+      "type": "component",
+      "component": "course.course-over-view",
+      "repeatable": false
+    },
+    "course_module": {
+      "type": "component",
+      "component": "course.course-module",
+      "repeatable": false
+    },
+    "student_review": {
+      "type": "component",
+      "component": "course.student-review",
+      "repeatable": false
+    },
+    "testimonial": {
+      "type": "component",
+      "component": "course.testimonial",
+      "repeatable": false
+    },
+    "faq": {
+      "type": "component",
+      "component": "course.faq",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

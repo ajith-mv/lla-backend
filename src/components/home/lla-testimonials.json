@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_home_lla_testimonials",
+  "info": {
+    "displayName": "lla_testimonials"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "slider": {
+      "type": "component",
+      "component": "home.slider",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_course_student_reviews",
+  "info": {
+    "displayName": "student_review"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

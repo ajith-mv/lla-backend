@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_about_founders",
+  "info": {
+    "displayName": "founder"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

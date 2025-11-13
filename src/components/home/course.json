@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_home_courses",
+  "info": {
+    "displayName": "course"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "card": {
+      "type": "component",
+      "component": "home.card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

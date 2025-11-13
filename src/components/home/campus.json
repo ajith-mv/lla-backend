@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_home_campuses",
+  "info": {
+    "displayName": "campus"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "btn_txt": {
+      "type": "string"
+    },
+    "bg_img": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_about_legacies",
+  "info": {
+    "displayName": "legacy"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
