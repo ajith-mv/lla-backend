@@ -522,31 +522,6 @@ export interface ApiBlogBlog extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiCC extends Struct.CollectionTypeSchema {
-  collectionName: 'cs';
-  info: {
-    displayName: 'CourseMaster';
-    pluralName: 'cs';
-    singularName: 'c';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::c.c'> &
-      Schema.Attribute.Private;
-    name: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiCampusCampus extends Struct.SingleTypeSchema {
   collectionName: 'campuses';
   info: {
@@ -1282,7 +1257,6 @@ declare module '@strapi/strapi' {
       'api::about.about': ApiAboutAbout;
       'api::admission.admission': ApiAdmissionAdmission;
       'api::blog.blog': ApiBlogBlog;
-      'api::c.c': ApiCC;
       'api::campus.campus': ApiCampusCampus;
       'api::course.course': ApiCourseCourse;
       'api::faculty.faculty': ApiFacultyFaculty;

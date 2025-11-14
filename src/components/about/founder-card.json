@@ -1,17 +1,20 @@
 {
-  "collectionName": "components_about_abouts",
+  "collectionName": "components_about_founder_cards",
   "info": {
-    "displayName": "about"
+    "displayName": "Founder_card"
   },
   "options": {},
   "attributes": {
-    "Title": {
-      "type": "string"
-    },
     "Heading": {
       "type": "string"
     },
-    "Img": {
+    "Description": {
+      "type": "blocks"
+    },
+    "Btn_txt": {
+      "type": "string"
+    },
+    "Image": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
@@ -20,9 +23,6 @@
         "videos",
         "audios"
       ]
-    },
-    "Description": {
-      "type": "blocks"
     }
   },
   "config": {}

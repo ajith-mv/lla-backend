@@ -6,10 +6,10 @@ export interface AboutAbout extends Struct.ComponentSchema {
     displayName: 'about';
   };
   attributes: {
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    title: Schema.Attribute.String;
+    Description: Schema.Attribute.Blocks;
+    Heading: Schema.Attribute.String;
+    Img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Title: Schema.Attribute.String;
   };
 }
 
@@ -19,7 +19,22 @@ export interface AboutFounder extends Struct.ComponentSchema {
     displayName: 'founder';
   };
   attributes: {
-    title: Schema.Attribute.String;
+    Founder_card: Schema.Attribute.Component<'about.founder-card', true>;
+    Heading: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
+  };
+}
+
+export interface AboutFounderCard extends Struct.ComponentSchema {
+  collectionName: 'components_about_founder_cards';
+  info: {
+    displayName: 'Founder_card';
+  };
+  attributes: {
+    Btn_txt: Schema.Attribute.String;
+    Description: Schema.Attribute.Blocks;
+    Heading: Schema.Attribute.String;
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -29,7 +44,13 @@ export interface AboutLegacy extends Struct.ComponentSchema {
     displayName: 'legacy';
   };
   attributes: {
-    title: Schema.Attribute.String;
+    Description: Schema.Attribute.Blocks;
+    Heading: Schema.Attribute.String;
+    Image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    Title: Schema.Attribute.String;
   };
 }
 
@@ -410,6 +431,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'about.about': AboutAbout;
       'about.founder': AboutFounder;
+      'about.founder-card': AboutFounderCard;
       'about.legacy': AboutLegacy;
       'about.team': AboutTeam;
       'address.address': AddressAddress;
