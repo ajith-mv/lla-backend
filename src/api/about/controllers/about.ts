@@ -2,7 +2,8 @@
  * about controller
  */
 
-import { factories } from '@strapi/strapi'
+import { factories } from '@strapi/strapi';
+import { addBaseUrlToMediaUrls } from "../../../helper";
 
 export default factories.createCoreController(
   "api::about.about",
@@ -25,7 +26,25 @@ export default factories.createCoreController(
                 },
                 "about.founder": {
                   populate: {
-                    Image: true,
+                    Founder_card: {
+                      populate: {
+                        Image: true,
+                      },
+                    },
+                  },
+                },
+                "about.team": {
+                  populate: {
+                    Card: {
+                      populate: {
+                        Image: true,
+                      },
+                    },
+                    Frame: {
+                      populate: {
+                        Image: true,
+                      },
+                    },
                   },
                 },
               },
@@ -38,7 +57,7 @@ export default factories.createCoreController(
         }
 
         // Add base URL to media URLs
-        // addBaseUrlToMediaUrls(entity);
+        addBaseUrlToMediaUrls(entity);
 
         const sanitizedEntity = await this.sanitizeOutput(entity, ctx);
         return this.transformResponse(sanitizedEntity);

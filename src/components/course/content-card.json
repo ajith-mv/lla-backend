@@ -1,28 +1,28 @@
 {
-  "collectionName": "components_about_abouts",
+  "collectionName": "components_course_content_cards",
   "info": {
-    "displayName": "About"
+    "displayName": "Content_card"
   },
   "options": {},
   "attributes": {
+    "Section": {
+      "type": "string"
+    },
     "Title": {
       "type": "string"
     },
-    "Heading": {
-      "type": "string"
+    "Description": {
+      "type": "blocks"
     },
     "Image": {
       "type": "media",
-      "multiple": false,
+      "multiple": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
       ]
-    },
-    "Description": {
-      "type": "blocks"
     }
   },
   "config": {}

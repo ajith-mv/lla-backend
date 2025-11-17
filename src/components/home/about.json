@@ -1,7 +1,7 @@
 {
   "collectionName": "components_home_abouts",
   "info": {
-    "displayName": "about"
+    "displayName": "About"
   },
   "options": {},
   "attributes": {
@@ -17,7 +17,7 @@
     "Btn_txt": {
       "type": "string"
     },
-    "Img": {
+    "Image": {
       "type": "media",
       "multiple": true,
       "allowedTypes": [

@@ -1,14 +1,11 @@
 {
-  "collectionName": "components_course_student_reviews",
+  "collectionName": "components_course_infos",
   "info": {
-    "displayName": "student_review"
+    "displayName": "Info"
   },
   "options": {},
   "attributes": {
     "Title": {
-      "type": "string"
-    },
-    "Heading": {
       "type": "string"
     },
     "Description": {

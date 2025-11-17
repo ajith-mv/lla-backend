@@ -3,12 +3,12 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface AboutAbout extends Struct.ComponentSchema {
   collectionName: 'components_about_abouts';
   info: {
-    displayName: 'about';
+    displayName: 'About';
   };
   attributes: {
     Description: Schema.Attribute.Blocks;
     Heading: Schema.Attribute.String;
-    Img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Title: Schema.Attribute.String;
   };
 }
@@ -16,7 +16,7 @@ export interface AboutAbout extends Struct.ComponentSchema {
 export interface AboutFounder extends Struct.ComponentSchema {
   collectionName: 'components_about_founders';
   info: {
-    displayName: 'founder';
+    displayName: 'Founder';
   };
   attributes: {
     Founder_card: Schema.Attribute.Component<'about.founder-card', true>;
@@ -41,7 +41,7 @@ export interface AboutFounderCard extends Struct.ComponentSchema {
 export interface AboutLegacy extends Struct.ComponentSchema {
   collectionName: 'components_about_legacies';
   info: {
-    displayName: 'legacy';
+    displayName: 'Legacy';
   };
   attributes: {
     Description: Schema.Attribute.Blocks;
@@ -57,10 +57,13 @@ export interface AboutLegacy extends Struct.ComponentSchema {
 export interface AboutTeam extends Struct.ComponentSchema {
   collectionName: 'components_about_teams';
   info: {
-    displayName: 'team';
+    displayName: 'Team';
   };
   attributes: {
-    title: Schema.Attribute.String;
+    Card: Schema.Attribute.Component<'home.card', true>;
+    Frame: Schema.Attribute.Component<'home.card', false>;
+    Heading: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
   };
 }
 
@@ -139,7 +142,13 @@ export interface CourseBanner extends Struct.ComponentSchema {
     displayName: 'banner';
   };
   attributes: {
-    title: Schema.Attribute.String;
+    Btn_txt: Schema.Attribute.String;
+    Description: Schema.Attribute.Blocks;
+    Image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    Title: Schema.Attribute.String;
   };
 }
 
@@ -149,7 +158,25 @@ export interface CourseBenefit extends Struct.ComponentSchema {
     displayName: 'benefit';
   };
   attributes: {
-    title: Schema.Attribute.String;
+    Card: Schema.Attribute.Component<'home.card', true>;
+    Heading: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
+  };
+}
+
+export interface CourseContentCard extends Struct.ComponentSchema {
+  collectionName: 'components_course_content_cards';
+  info: {
+    displayName: 'Content_card';
+  };
+  attributes: {
+    Description: Schema.Attribute.Blocks;
+    Image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    Section: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
   };
 }
 
@@ -159,7 +186,10 @@ export interface CourseCourseModule extends Struct.ComponentSchema {
     displayName: 'course_module';
   };
   attributes: {
-    title: Schema.Attribute.String;
+    Content_card: Schema.Attribute.Component<'course.content-card', true>;
+    Description: Schema.Attribute.Text;
+    Duration: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
   };
 }
 
@@ -179,16 +209,13 @@ export interface CourseDipProfessional extends Struct.ComponentSchema {
     displayName: 'course';
   };
   attributes: {
-    banner: Schema.Attribute.Component<'course.banner', false>;
-    benefit: Schema.Attribute.Component<'course.benefit', false>;
-    course_module: Schema.Attribute.Component<'course.course-module', false>;
-    course_over_view: Schema.Attribute.Component<
-      'course.course-over-view',
-      false
-    >;
+    Course_content: Schema.Attribute.Component<'course.course-module', false>;
     faq: Schema.Attribute.Component<'course.faq', false>;
-    student_review: Schema.Attribute.Component<'course.student-review', false>;
-    testimonial: Schema.Attribute.Component<'course.testimonial', false>;
+    Menu: Schema.Attribute.Component<'course.banner', false>;
+    Other_Info: Schema.Attribute.Component<'course.other-info', false>;
+    Overview: Schema.Attribute.Component<'course.benefit', false>;
+    Student_testimonial: Schema.Attribute.Component<'home.testimonial', true>;
+    Testimonial: Schema.Attribute.Component<'home.lla-testimonials', true>;
   };
 }
 
@@ -202,23 +229,38 @@ export interface CourseFaq extends Struct.ComponentSchema {
   };
 }
 
+export interface CourseInfo extends Struct.ComponentSchema {
+  collectionName: 'components_course_infos';
+  info: {
+    displayName: 'Info';
+  };
+  attributes: {
+    Description: Schema.Attribute.Text;
+    Title: Schema.Attribute.String;
+  };
+}
+
+export interface CourseOtherInfo extends Struct.ComponentSchema {
+  collectionName: 'components_course_other_infos';
+  info: {
+    displayName: 'Other Info';
+  };
+  attributes: {
+    Description: Schema.Attribute.Text;
+    Info: Schema.Attribute.Component<'course.info', true>;
+    Title: Schema.Attribute.String;
+  };
+}
+
 export interface CourseStudentReview extends Struct.ComponentSchema {
   collectionName: 'components_course_student_reviews';
   info: {
     displayName: 'student_review';
   };
   attributes: {
-    title: Schema.Attribute.String;
-  };
-}
-
-export interface CourseTestimonial extends Struct.ComponentSchema {
-  collectionName: 'components_course_testimonials';
-  info: {
-    displayName: 'testimonial';
-  };
-  attributes: {
-    title: Schema.Attribute.String;
+    Description: Schema.Attribute.Text;
+    Heading: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
   };
 }
 
@@ -235,13 +277,16 @@ export interface FaqBanner extends Struct.ComponentSchema {
 export interface HomeAbout extends Struct.ComponentSchema {
   collectionName: 'components_home_abouts';
   info: {
-    displayName: 'about';
+    displayName: 'About';
   };
   attributes: {
     Btn_txt: Schema.Attribute.String;
     Description: Schema.Attribute.Text;
     Heading: Schema.Attribute.String;
-    Img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    Image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     Title: Schema.Attribute.String;
   };
 }
@@ -249,7 +294,7 @@ export interface HomeAbout extends Struct.ComponentSchema {
 export interface HomeBanner extends Struct.ComponentSchema {
   collectionName: 'components_home_banners';
   info: {
-    displayName: 'banner';
+    displayName: 'Banner';
   };
   attributes: {
     Title: Schema.Attribute.String;
@@ -260,7 +305,7 @@ export interface HomeBanner extends Struct.ComponentSchema {
 export interface HomeCampus extends Struct.ComponentSchema {
   collectionName: 'components_home_campuses';
   info: {
-    displayName: 'campus';
+    displayName: 'Campus';
   };
   attributes: {
     Bg_img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
@@ -274,12 +319,15 @@ export interface HomeCampus extends Struct.ComponentSchema {
 export interface HomeCard extends Struct.ComponentSchema {
   collectionName: 'components_home_cards';
   info: {
-    displayName: 'card';
+    displayName: 'Card';
   };
   attributes: {
     Btn_txt: Schema.Attribute.String;
     Description: Schema.Attribute.Text;
-    Img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    Image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     Title: Schema.Attribute.String;
   };
 }
@@ -287,10 +335,10 @@ export interface HomeCard extends Struct.ComponentSchema {
 export interface HomeCourse extends Struct.ComponentSchema {
   collectionName: 'components_home_courses';
   info: {
-    displayName: 'course';
+    displayName: 'Course';
   };
   attributes: {
-    card: Schema.Attribute.Component<'home.card', true>;
+    Card: Schema.Attribute.Component<'home.card', true>;
     Description: Schema.Attribute.Text;
     Title: Schema.Attribute.String;
   };
@@ -299,11 +347,11 @@ export interface HomeCourse extends Struct.ComponentSchema {
 export interface HomeFaculty extends Struct.ComponentSchema {
   collectionName: 'components_home_faculties';
   info: {
-    displayName: 'faculty';
+    displayName: 'Faculty';
   };
   attributes: {
     Btn_txt: Schema.Attribute.String;
-    card: Schema.Attribute.Component<'home.card', true>;
+    Card: Schema.Attribute.Component<'home.card', true>;
     Description: Schema.Attribute.Text;
     Heading: Schema.Attribute.String;
     Title: Schema.Attribute.String;
@@ -313,12 +361,15 @@ export interface HomeFaculty extends Struct.ComponentSchema {
 export interface HomeGallery extends Struct.ComponentSchema {
   collectionName: 'components_home_galleries';
   info: {
-    displayName: 'gallery';
+    displayName: 'Gallery';
   };
   attributes: {
     Btn_txt: Schema.Attribute.String;
     Heading: Schema.Attribute.String;
-    Img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    Image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     Title: Schema.Attribute.String;
   };
 }
@@ -326,12 +377,12 @@ export interface HomeGallery extends Struct.ComponentSchema {
 export interface HomeLife extends Struct.ComponentSchema {
   collectionName: 'components_home_lives';
   info: {
-    displayName: 'life';
+    displayName: 'Life';
   };
   attributes: {
     Bg_img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Btn_txt: Schema.Attribute.String;
-    card: Schema.Attribute.Component<'home.card', true>;
+    Card: Schema.Attribute.Component<'home.card', true>;
     Heading: Schema.Attribute.String;
     Title: Schema.Attribute.String;
   };
@@ -340,12 +391,12 @@ export interface HomeLife extends Struct.ComponentSchema {
 export interface HomeLlaTestimonials extends Struct.ComponentSchema {
   collectionName: 'components_home_lla_testimonials';
   info: {
-    displayName: 'lla_testimonials';
+    displayName: 'Lla_testimonials';
   };
   attributes: {
     Description: Schema.Attribute.Text;
     Heading: Schema.Attribute.String;
-    slider: Schema.Attribute.Component<'home.slider', true>;
+    Slider: Schema.Attribute.Component<'home.slider', true>;
     Title: Schema.Attribute.String;
   };
 }
@@ -353,7 +404,7 @@ export interface HomeLlaTestimonials extends Struct.ComponentSchema {
 export interface HomeSlider extends Struct.ComponentSchema {
   collectionName: 'components_home_sliders';
   info: {
-    displayName: 'slider';
+    displayName: 'Slider';
   };
   attributes: {
     Batch: Schema.Attribute.String;
@@ -365,12 +416,15 @@ export interface HomeSlider extends Struct.ComponentSchema {
 export interface HomeSponsor extends Struct.ComponentSchema {
   collectionName: 'components_home_sponsors';
   info: {
-    displayName: 'sponsor';
+    displayName: 'Sponsor';
   };
   attributes: {
     Description: Schema.Attribute.Text;
     Heading: Schema.Attribute.String;
-    Img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    Image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     Title: Schema.Attribute.String;
   };
 }
@@ -378,10 +432,10 @@ export interface HomeSponsor extends Struct.ComponentSchema {
 export interface HomeTestimonial extends Struct.ComponentSchema {
   collectionName: 'components_home_testimonials';
   info: {
-    displayName: 'testimonial';
+    displayName: 'Testimonial';
   };
   attributes: {
-    card: Schema.Attribute.Component<'home.card', true>;
+    Card: Schema.Attribute.Component<'home.card', true>;
     Description: Schema.Attribute.Text;
     Heading: Schema.Attribute.String;
     Title: Schema.Attribute.String;
@@ -442,12 +496,14 @@ declare module '@strapi/strapi' {
       'campus.testimonial': CampusTestimonial;
       'course.banner': CourseBanner;
       'course.benefit': CourseBenefit;
+      'course.content-card': CourseContentCard;
       'course.course-module': CourseCourseModule;
       'course.course-over-view': CourseCourseOverView;
       'course.dip-professional': CourseDipProfessional;
       'course.faq': CourseFaq;
+      'course.info': CourseInfo;
+      'course.other-info': CourseOtherInfo;
       'course.student-review': CourseStudentReview;
-      'course.testimonial': CourseTestimonial;
       'faq.banner': FaqBanner;
       'home.about': HomeAbout;
       'home.banner': HomeBanner;

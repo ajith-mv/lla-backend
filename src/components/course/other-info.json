@@ -1,22 +1,19 @@
 {
-  "collectionName": "components_course_course_modules",
+  "collectionName": "components_course_other_infos",
   "info": {
-    "displayName": "course_module"
+    "displayName": "Other Info"
   },
   "options": {},
   "attributes": {
     "Title": {
       "type": "string"
     },
-    "Duration": {
-      "type": "string"
-    },
     "Description": {
       "type": "text"
     },
-    "Content_card": {
+    "Info": {
       "type": "component",
-      "component": "course.content-card",
+      "component": "course.info",
       "repeatable": true
     }
   },

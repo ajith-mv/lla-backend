@@ -1,7 +1,7 @@
 {
   "collectionName": "components_home_sponsors",
   "info": {
-    "displayName": "sponsor"
+    "displayName": "Sponsor"
   },
   "options": {},
   "attributes": {
@@ -14,7 +14,7 @@
     "Description": {
       "type": "text"
     },
-    "Img": {
+    "Image": {
       "type": "media",
       "multiple": true,
       "allowedTypes": [

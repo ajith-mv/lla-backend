@@ -1,31 +1,6 @@
 import { factories } from "@strapi/strapi";
 import { posix } from "path";
-
-function addBaseUrlToMediaUrls(obj) {
-  const baseUrl = process.env.BASE_URL;
-
-  if (Array.isArray(obj)) {
-    return obj.map(addBaseUrlToMediaUrls);
-  } else if (obj && typeof obj === "object") {
-    for (const key in obj) {
-      if (!obj.hasOwnProperty(key)) continue;
-
-      const value = obj[key];
-
-      if (
-        key === "url" &&
-        typeof value === "string" &&
-        !value.startsWith("http")
-      ) {
-        obj[key] = `${baseUrl}${value}`;
-      } else if (typeof value === "object" && value !== null) {
-        addBaseUrlToMediaUrls(value);
-      }
-    }
-  }
-
-  return obj;
-}
+import { addBaseUrlToMediaUrls } from "../../../helper";
 
 export default factories.createCoreController(
   "api::home.home",
@@ -43,9 +18,9 @@ export default factories.createCoreController(
                 },
                 "home.course": {
                   populate: {
-                    card: {
+                    Card: {
                       populate: {
-                        Img: true,
+                        Image: true,
                       },
                     },
                   },
@@ -57,51 +32,51 @@ export default factories.createCoreController(
                 },
                 "home.faculty": {
                   populate: {
-                    card: {
+                    Card: {
                       populate: {
-                        Img: true,
+                        Image: true,
                       },
                     },
                   },
                 },
                 "home.life": {
                   populate: {
-                    card: {
+                    Card: {
                       populate: {
-                        Img: true,
+                        Image: true,
                       },
                     },
                   },
                 },
                 "home.testimonial": {
                   populate: {
-                    card: {
+                    Card: {
                       populate: {
-                        Img: true,
+                        Image: true,
                       },
                     },
                   },
                 },
                 "home.lla-testimonials": {
                   populate: {
-                    slider: {
+                    Slider: {
                       populate: { "*": true },
                     },
                   },
                 },
                 "home.gallery": {
                   populate: {
-                    Img: true,
+                    Image: true,
                   },
                 },
                 "home.about": {
                   populate: {
-                    Img: true,
+                    Image: true,
                   },
                 },
                 "home.sponsor": {
                   populate: {
-                    Img: true,
+                    Image: true,
                   },
                 },
               },

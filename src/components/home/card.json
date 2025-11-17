@@ -1,11 +1,11 @@
 {
   "collectionName": "components_home_cards",
   "info": {
-    "displayName": "card"
+    "displayName": "Card"
   },
   "options": {},
   "attributes": {
-    "Img": {
+    "Image": {
       "type": "media",
       "multiple": true,
       "allowedTypes": [

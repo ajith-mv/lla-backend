@@ -1,7 +1,7 @@
 {
   "collectionName": "components_home_lives",
   "info": {
-    "displayName": "life"
+    "displayName": "Life"
   },
   "options": {},
   "attributes": {
@@ -24,7 +24,7 @@
         "audios"
       ]
     },
-    "card": {
+    "Card": {
       "type": "component",
       "component": "home.card",
       "repeatable": true

@@ -1,12 +1,25 @@
 {
   "collectionName": "components_about_teams",
   "info": {
-    "displayName": "team"
+    "displayName": "Team"
   },
   "options": {},
   "attributes": {
-    "title": {
+    "Title": {
       "type": "string"
+    },
+    "Heading": {
+      "type": "string"
+    },
+    "Card": {
+      "type": "component",
+      "component": "home.card",
+      "repeatable": true
+    },
+    "Frame": {
+      "type": "component",
+      "component": "home.card",
+      "repeatable": false
     }
   },
   "config": {}

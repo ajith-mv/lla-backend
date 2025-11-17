@@ -1,7 +1,7 @@
 {
   "collectionName": "components_home_lla_testimonials",
   "info": {
-    "displayName": "lla_testimonials"
+    "displayName": "Lla_testimonials"
   },
   "options": {},
   "attributes": {
@@ -14,7 +14,7 @@
     "Description": {
       "type": "text"
     },
-    "slider": {
+    "Slider": {
       "type": "component",
       "component": "home.slider",
       "repeatable": true

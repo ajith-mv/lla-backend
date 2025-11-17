@@ -5,35 +5,35 @@
   },
   "options": {},
   "attributes": {
-    "banner": {
+    "Menu": {
       "type": "component",
       "component": "course.banner",
       "repeatable": false
     },
-    "benefit": {
+    "Overview": {
       "type": "component",
       "component": "course.benefit",
       "repeatable": false
     },
-    "course_over_view": {
-      "type": "component",
-      "component": "course.course-over-view",
-      "repeatable": false
-    },
-    "course_module": {
+    "Course_content": {
       "type": "component",
       "component": "course.course-module",
       "repeatable": false
     },
-    "student_review": {
+    "Other_Info": {
       "type": "component",
-      "component": "course.student-review",
+      "component": "course.other-info",
       "repeatable": false
     },
-    "testimonial": {
+    "Student_testimonial": {
       "type": "component",
-      "component": "course.testimonial",
-      "repeatable": false
+      "component": "home.testimonial",
+      "repeatable": true
+    },
+    "Testimonial": {
+      "type": "component",
+      "component": "home.lla-testimonials",
+      "repeatable": true
     },
     "faq": {
       "type": "component",

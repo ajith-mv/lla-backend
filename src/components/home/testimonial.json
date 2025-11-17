@@ -1,7 +1,7 @@
 {
   "collectionName": "components_home_testimonials",
   "info": {
-    "displayName": "testimonial"
+    "displayName": "Testimonial"
   },
   "options": {},
   "attributes": {
@@ -14,7 +14,7 @@
     "Description": {
       "type": "text"
     },
-    "card": {
+    "Card": {
       "type": "component",
       "component": "home.card",
       "repeatable": true

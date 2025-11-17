@@ -5,8 +5,24 @@
   },
   "options": {},
   "attributes": {
-    "title": {
+    "Title": {
       "type": "string"
+    },
+    "Description": {
+      "type": "blocks"
+    },
+    "Btn_txt": {
+      "type": "string"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   },
   "config": {}

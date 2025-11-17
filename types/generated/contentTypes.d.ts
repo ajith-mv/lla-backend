@@ -550,6 +550,37 @@ export interface ApiCampusCampus extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiContactContact extends Struct.CollectionTypeSchema {
+  collectionName: 'contacts';
+  info: {
+    displayName: 'Contact';
+    pluralName: 'contacts';
+    singularName: 'contact';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Email: Schema.Attribute.Email;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact.contact'
+    > &
+      Schema.Attribute.Private;
+    Message: Schema.Attribute.Text;
+    Mobile: Schema.Attribute.String;
+    Name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCourseCourse extends Struct.SingleTypeSchema {
   collectionName: 'courses';
   info: {
@@ -624,6 +655,45 @@ export interface ApiFaqFaq extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFooterFooter extends Struct.SingleTypeSchema {
+  collectionName: 'footers';
+  info: {
+    displayName: 'Footer';
+    pluralName: 'footers';
+    singularName: 'footer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Btn_txt: Schema.Attribute.String;
+    Copy_right_txt: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Description: Schema.Attribute.Text;
+    Icon: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::footer.footer'
+    > &
+      Schema.Attribute.Private;
+    Logo: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    Title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1258,9 +1328,11 @@ declare module '@strapi/strapi' {
       'api::admission.admission': ApiAdmissionAdmission;
       'api::blog.blog': ApiBlogBlog;
       'api::campus.campus': ApiCampusCampus;
+      'api::contact.contact': ApiContactContact;
       'api::course.course': ApiCourseCourse;
       'api::faculty.faculty': ApiFacultyFaculty;
       'api::faq.faq': ApiFaqFaq;
+      'api::footer.footer': ApiFooterFooter;
       'api::gallery.gallery': ApiGalleryGallery;
       'api::home.home': ApiHomeHome;
       'api::life.life': ApiLifeLife;

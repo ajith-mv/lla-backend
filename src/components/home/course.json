@@ -1,7 +1,7 @@
 {
   "collectionName": "components_home_courses",
   "info": {
-    "displayName": "course"
+    "displayName": "Course"
   },
   "options": {},
   "attributes": {
@@ -11,7 +11,7 @@
     "Description": {
       "type": "text"
     },
-    "card": {
+    "Card": {
       "type": "component",
       "component": "home.card",
       "repeatable": true
