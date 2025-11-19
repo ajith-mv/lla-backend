@@ -1,16 +1,16 @@
 {
-  "collectionName": "components_course_faqs",
+  "collectionName": "components_course_how_to_applies",
   "info": {
-    "displayName": "faq"
+    "displayName": "How_to_apply"
   },
   "options": {},
   "attributes": {
     "Title": {
       "type": "string"
     },
-    "QA": {
+    "Card": {
       "type": "component",
-      "component": "course.qa",
+      "component": "course.card",
       "repeatable": true
     }
   },

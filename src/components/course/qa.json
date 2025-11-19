@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_course_qas",
+  "info": {
+    "displayName": "QA"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

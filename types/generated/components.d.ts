@@ -164,6 +164,18 @@ export interface CourseBenefit extends Struct.ComponentSchema {
   };
 }
 
+export interface CourseCard extends Struct.ComponentSchema {
+  collectionName: 'components_course_cards';
+  info: {
+    displayName: 'Card';
+  };
+  attributes: {
+    Description: Schema.Attribute.Text;
+    Heading: Schema.Attribute.String;
+    Icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface CourseContentCard extends Struct.ComponentSchema {
   collectionName: 'components_course_content_cards';
   info: {
@@ -206,11 +218,12 @@ export interface CourseCourseOverView extends Struct.ComponentSchema {
 export interface CourseDipProfessional extends Struct.ComponentSchema {
   collectionName: 'components_course_dip_professionals';
   info: {
-    displayName: 'course';
+    displayName: 'Course';
   };
   attributes: {
     Course_content: Schema.Attribute.Component<'course.course-module', false>;
-    faq: Schema.Attribute.Component<'course.faq', false>;
+    Faq: Schema.Attribute.Component<'course.faq', false>;
+    HowToApply: Schema.Attribute.Component<'course.how-to-apply', false>;
     Menu: Schema.Attribute.Component<'course.banner', false>;
     Other_Info: Schema.Attribute.Component<'course.other-info', false>;
     Overview: Schema.Attribute.Component<'course.benefit', false>;
@@ -225,7 +238,19 @@ export interface CourseFaq extends Struct.ComponentSchema {
     displayName: 'faq';
   };
   attributes: {
-    title: Schema.Attribute.String;
+    QA: Schema.Attribute.Component<'course.qa', true>;
+    Title: Schema.Attribute.String;
+  };
+}
+
+export interface CourseHowToApply extends Struct.ComponentSchema {
+  collectionName: 'components_course_how_to_applies';
+  info: {
+    displayName: 'How_to_apply';
+  };
+  attributes: {
+    Card: Schema.Attribute.Component<'course.card', true>;
+    Title: Schema.Attribute.String;
   };
 }
 
@@ -248,6 +273,17 @@ export interface CourseOtherInfo extends Struct.ComponentSchema {
   attributes: {
     Description: Schema.Attribute.Text;
     Info: Schema.Attribute.Component<'course.info', true>;
+    Title: Schema.Attribute.String;
+  };
+}
+
+export interface CourseQa extends Struct.ComponentSchema {
+  collectionName: 'components_course_qas';
+  info: {
+    displayName: 'QA';
+  };
+  attributes: {
+    Description: Schema.Attribute.Text;
     Title: Schema.Attribute.String;
   };
 }
@@ -496,13 +532,16 @@ declare module '@strapi/strapi' {
       'campus.testimonial': CampusTestimonial;
       'course.banner': CourseBanner;
       'course.benefit': CourseBenefit;
+      'course.card': CourseCard;
       'course.content-card': CourseContentCard;
       'course.course-module': CourseCourseModule;
       'course.course-over-view': CourseCourseOverView;
       'course.dip-professional': CourseDipProfessional;
       'course.faq': CourseFaq;
+      'course.how-to-apply': CourseHowToApply;
       'course.info': CourseInfo;
       'course.other-info': CourseOtherInfo;
+      'course.qa': CourseQa;
       'course.student-review': CourseStudentReview;
       'faq.banner': FaqBanner;
       'home.about': HomeAbout;

@@ -1,7 +1,7 @@
 {
   "collectionName": "components_course_dip_professionals",
   "info": {
-    "displayName": "course"
+    "displayName": "Course"
   },
   "options": {},
   "attributes": {
@@ -35,7 +35,12 @@
       "component": "home.lla-testimonials",
       "repeatable": true
     },
-    "faq": {
+    "HowToApply": {
+      "type": "component",
+      "component": "course.how-to-apply",
+      "repeatable": false
+    },
+    "Faq": {
       "type": "component",
       "component": "course.faq",
       "repeatable": false
