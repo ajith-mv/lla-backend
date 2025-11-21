@@ -16,4 +16,8 @@ export default {
       },
     },
   },
+  'admission-manager': {
+    enabled: true,
+    resolve: './src/plugins/admission-manager',
+  },
 }
